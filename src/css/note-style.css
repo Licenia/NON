@@ -1,0 +1,65 @@
+:root {
+  --color-base: #fef988;
+  --color-letra: #6f6f69;
+}
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  border: 0;
+}
+
+body,
+html {
+  height: 100%;
+}
+
+.note-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.note-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.icono-salir{
+    width: 2rem;
+    transition: transform 0.2s ease;
+}
+
+.note-content {
+  width: 90%;
+  margin-top: 1rem;
+}
+
+.titulo {
+  width: 100%;
+  font-size: 2rem;
+}
+
+.note-textarea {
+  font-size: 1.3rem;
+}
+
+.btn-vista-previa {
+    height: 2.5rem;
+  background-color: var(--color-base);
+  border-radius: 0.7rem;
+  border: 0;
+  color: var(--color-letra);
+  transition: transform 0.2s ease-out;
+  box-shadow: 0 1px 2px 1px rgb(0, 0, 0, 0.2);
+}
+
+.btn-vista-previa:hover{
+     transform: scale(1.1);
+    cursor: pointer;
+}
+
+.icono-salir:hover{
+     transform: scale(1.1);
+}

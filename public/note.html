@@ -3,20 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/assets/images/icono.png" type="image/x-icon">
     <link rel="stylesheet" href="./src/css/note-style.css">
     <title>| N O N</title>
 </head>
 <body>
-    <div class="container">
-        <div>
+    <div class="note-container">
+        <div class="note-header">
             <a href="index.html">
-                <img src="./assets/images/regresar.svg" alt="icono-salir" srcset="">
+                <img class="icono-salir" src="./assets/images/regresar.svg" alt="icono-salir">
             </a>
-            <button>Vista Previa</button>
+            <button class="btn-vista-previa">Vista Previa</button>
         </div>
-        <section>
-            <input type="text" placeholder="Titulo">
-            <textarea name="" id="" placeholder="Escribe aqui"></textarea>
+        <section class="note-content">
+            <input class="titulo" type="text" placeholder="Titulo">
+            <textarea class="note-textarea" name="" id="" placeholder="Escribe aqui"></textarea>
         </section>
     </div>
 </body>
