@@ -1,16 +1,21 @@
 
 import MarkdownIt from 'markdown-it';
+// const textoMarkdown = `
+//  # NON
+//  **probando negritas**
+//  *cursiva*
+//  _arroz_
+//  -huevos
+//  -etc
+//  `
+ 
+//  const vistaPrevia = document.getElementById("vista-previa");
 
 const md = new MarkdownIt();
+const textMarkdown = document.getElementById("note-textarea");
 
-const textoMarkdown = `
- # NON
- **probando negritas**
-    *cursiva*
-    _arroz_
-    -huevos
-    -etc
- `
-
- const resultadoHtml = md.render(textoMarkdown);
- console.log(resultadoHtml);
+textMarkdown.addEventListener("input", () =>{
+   const resultadoHtml = md.render(textMarkdown);
+   const div = document.createElement("div");
+   div.innerHTML = resultadoHtml;
+}) 
