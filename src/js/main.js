@@ -1,21 +1,21 @@
+import MarkdownIt from "markdown-it";
 
-import MarkdownIt from 'markdown-it';
-// const textoMarkdown = `
-//  # NON
-//  **probando negritas**
-//  *cursiva*
-//  _arroz_
-//  -huevos
-//  -etc
-//  `
- 
-//  const vistaPrevia = document.getElementById("vista-previa");
-
-const md = new MarkdownIt();
 const textMarkdown = document.getElementById("note-textarea");
+const md = new MarkdownIt();
 
-textMarkdown.addEventListener("input", () =>{
-   const resultadoHtml = md.render(textMarkdown);
-   const div = document.createElement("div");
-   div.innerHTML = resultadoHtml;
-}) 
+textMarkdown.addEventListener("keyup", () => {
+  const texto = textMarkdown.value;
+
+  if (typeof texto !== "string")
+    return console.error("No es el formato esperado");
+
+  const resultadoHtml = md.render(texto);
+  mostrar(resultadoHtml);
+  });
+
+const mostrar = (renderizado) => {
+  const mostrarResultados = document.getElementById("vistaPre");
+  mostrarResultados.innerHTML = "";
+  mostrarResultados.innerHTML = renderizado;
+};
+
