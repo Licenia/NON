@@ -13,11 +13,14 @@
 body,
 html {
   height: 100%;
+  margin: 0;
 }
 
 .note-container {
   display: flex;
   flex-direction: column;
+  height: 100dvh;
+  padding: 1rem;
 }
 
 .note-header {
@@ -26,14 +29,15 @@ html {
   align-items: flex-start;
 }
 
-.icono-salir{
-    width: 2rem;
-    transition: transform 0.2s ease;
+.icono-salir {
+  width: 2rem;
+  transition: transform 0.2s ease;
 }
 
 .note-content {
-  width: 90%;
-  margin-top: 1rem;
+  width: 100%;
+  flex-grow: 1;
+  padding-top: 1rem;
 }
 
 .titulo {
@@ -43,10 +47,14 @@ html {
 
 .note-textarea {
   font-size: 1.3rem;
+  resize: none;
+  height: 90%;
+  width: 100%;
 }
 
-.btn-vista-previa {
-    height: 2.5rem;
+.btn-vista-previa,
+.btn-editar {
+  height: 2.5rem;
   background-color: var(--color-base);
   border-radius: 0.7rem;
   border: 0;
@@ -55,11 +63,30 @@ html {
   box-shadow: 0 1px 2px 1px rgb(0, 0, 0, 0.2);
 }
 
-.btn-vista-previa:hover{
-     transform: scale(1.1);
-    cursor: pointer;
+.btn-editar {
+  margin-left: auto;
 }
 
-.icono-salir:hover{
-     transform: scale(1.1);
+.btn-vista-previa:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.btn-editar:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.icono-salir:hover {
+  transform: scale(1.1);
+}
+
+textarea:focus,
+input:focus{
+  outline: none;
+}
+
+.preview-view{
+  padding: 1rem;
+  height: 100dvh;
 }
