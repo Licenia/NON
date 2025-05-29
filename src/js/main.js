@@ -28,16 +28,10 @@ const iconoFlecha = document.querySelector(".icono-salir");
 const cambiarEstado = document.getElementById("preview-view");
 const editar = document.getElementById("back-to-edit");
 const noteContainer = document.querySelector(".note-container");
+const guardarNota = document.getElementById("guardar");
 
 if (mostrarVistaPrevia) {
   mostrarVistaPrevia.addEventListener("click", () => {
-    const datos = {
-      titulo: document.querySelector(".titulo").value,
-      contenido: document.getElementById("note-textarea").value,
-      fecha: new Date().toISOString(),
-    };
-    localStorage.setItem("nota", JSON.stringify(datos));
-
     noteContainer.style.display = "none";
     iconoFlecha.style.display = "none";
     noteContent.style.display = "none";
@@ -55,6 +49,21 @@ if (editar) {
     editar.style.display = "none";
     cambiarEstado.style.display = "none";
     mostrarVistaPrevia.style.display = "block";
+  });
+}
+
+if (guardarNota) {
+  guardarNota.addEventListener("click", () => {
+    let notas = JSON.parse(localStorage.getItem("notas")) || [];
+    const nuevaNota = {
+      titulo: document.querySelector(".titulo").value,
+      contenido: document.getElementById("note-textarea").value,
+      fecha: new Date().toLocaleDateString(),
+    };
+
+    notas.push(nuevaNota);
+
+    localStorage.setItem("notas", JSON.stringify(notas));
   });
 }
 
