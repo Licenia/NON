@@ -53,7 +53,8 @@ html {
 }
 
 .btn-vista-previa,
-.btn-editar {
+.btn-editar,
+.btn-guardar {
   height: 2.5rem;
   background-color: var(--color-base);
   border-radius: 0.7rem;
@@ -63,8 +64,13 @@ html {
   box-shadow: 0 1px 2px 1px rgb(0, 0, 0, 0.2);
 }
 
-.btn-editar {
-  margin-left: auto;
+.btn-guardar{
+  width: 5rem;
+}
+
+.btn-guardar:hover{
+  transform: scale(1.1);
+  cursor: pointer;
 }
 
 .btn-vista-previa:hover {
