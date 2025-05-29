@@ -1,17 +1,20 @@
+const contenedorLista = document.querySelector(".contenedor-lista");
 
-  const datosGuardados = JSON.parse(localStorage.getItem("nota"));
+const datosGuardados = JSON.parse(localStorage.getItem("notas"));
+datosGuardados.forEach((nota) => {
+  const card = document.createElement("div");
+  card.classList.add("card");
 
-  const tituloElemento = document.getElementById("titulo-guardado");
-  const contenidoElemento = document.getElementById("contenido-guardado");
-  const fechaElemento = document.getElementById("fecha-guardada");
+  const titulo = document.createElement("h3");
+  titulo.textContent = nota.titulo;
 
-  if (datosGuardados) {
-    tituloElemento.textContent = datosGuardados.titulo;
-    contenidoElemento.innerHTML = datosGuardados.contenido;
-    fechaElemento.textContent = new Date(datosGuardados.fecha).toLocaleString();
-  } else {
-    tituloElemento.textContent = "No hay notas guardadas.";
-    contenidoElemento.textContent = "";
-    fechaElemento.textContent = "";
-  }
+  const fecha = document.createElement("small");
+  fecha.textContent = nota.fecha;
 
+  const contenido = document.createElement("p");
+  contenido.textContent = nota.contenido;
+
+  card.appendChild(titulo);
+  card.appendChild(fecha);
+  contenedorLista.appendChild(card);
+});
