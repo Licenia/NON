@@ -3,6 +3,9 @@ const contenedorLista = document.querySelector(".contenedor-lista");
 const datosGuardados = JSON.parse(localStorage.getItem("notas"));
 datosGuardados.forEach((nota, index) => {
   const containerOpciones = document.createElement("div");
+  const cardSection = document.createElement("div");
+  cardSection.classList.add("card-section");
+
   
   const card = document.createElement("div");
   card.classList.add("card");
@@ -23,11 +26,12 @@ datosGuardados.forEach((nota, index) => {
   menu.setAttribute("src", "/public/assets/images/tres-puntos.png");
   menu.classList.add("menu-btn");
   
-  card.appendChild(titulo);
-  card.appendChild(contenido);
+  cardSection.appendChild(titulo);
+  cardSection.appendChild(contenido);
   containerOpciones.appendChild(fecha);
   containerOpciones.appendChild(menu);
   contenedorLista.appendChild(card);
+  card.appendChild(cardSection);
   card.appendChild(containerOpciones);
 });
 
