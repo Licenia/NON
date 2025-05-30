@@ -5,36 +5,39 @@
   border: 0;
 }
 
-.card{
-    display: flex;
-    justify-content: space-between;
-    border: 1px solid rgba(0, 0, 0, 0.2);
-    margin-bottom: .9rem;
-    border-radius: .7rem;
-    padding: .5rem;
+.card {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  margin-bottom: 0.9rem;
+  border-radius: 0.7rem;
+  padding: 0.5rem;
 }
 
-.card:hover{
-    cursor: pointer;
+.menu-btn {
+  width: 1.4rem;
+  height: 1.4rem;
 }
 
-.menu-btn{
-    width: 1.4rem;
-    height: 1.4rem;
+.menu-btn:hover {
+  cursor: pointer;
 }
 
-.menu-btn:hover{
-    cursor: pointer;
+.date {
+  padding-right: 0.4rem;
 }
 
-.date{
-    padding-right: .4rem ;
+.card-section {
+  position: relative;
+
+  width: 50%;
+  max-height: 5rem;
+  overflow-y: hidden;
 }
 
-.card-section{
-    width: 50%;
-    max-height: 5rem;
-    overflow-y: hidden;
+.card-section:hover {
+  cursor: pointer;
 }
 
 .icono-salir {
@@ -44,4 +47,32 @@
 
 .icono-salir:hover {
   transform: scale(1.1);
+}
+
+.container-opciones {
+  position: relative;
+  /* display: flex; */
+  /* align-items: center; */
+}
+
+.container-menu {
+  position: absolute;
+  border-radius: 0.5rem;
+  top: 10%;
+  right: 20%;
+  background-color: white;
+  border: 1px solid #ccc;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  width: 120px;
+}
+
+.container-menu span {
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.container-menu span:hover {
+  background-color: #f0f0f0;
 }

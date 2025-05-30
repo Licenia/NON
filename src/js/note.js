@@ -3,6 +3,8 @@ const contenedorLista = document.querySelector(".contenedor-lista");
 const datosGuardados = JSON.parse(localStorage.getItem("notas"));
 datosGuardados.forEach((nota, index) => {
   const containerOpciones = document.createElement("div");
+  containerOpciones.classList.add("container-opciones");
+  
   const cardSection = document.createElement("div");
   cardSection.classList.add("card-section");
 
@@ -10,7 +12,7 @@ datosGuardados.forEach((nota, index) => {
   const card = document.createElement("div");
   card.classList.add("card");
   card.setAttribute("id", "card");
-  card.dataset.index = index;
+  cardSection.dataset.index = index;
   
   const titulo = document.createElement("h3");
   titulo.textContent = nota.titulo;
@@ -36,7 +38,7 @@ datosGuardados.forEach((nota, index) => {
 });
 
 
-const cards = document.querySelectorAll(".card");
+const cards = document.querySelectorAll(".card-section");
 cards.forEach((card) => {
   card.addEventListener("click", (e) => {
     const index = e.currentTarget.dataset.index;
@@ -44,3 +46,4 @@ cards.forEach((card) => {
     window.location.href = "contenidoNotas.html";
   });
 });
+

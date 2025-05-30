@@ -1,6 +1,5 @@
-
 const datosGuardados = JSON.parse(localStorage.getItem("notas"));
-const posicion = localStorage.getItem("cardSeleccionada");
+const posicion = parseInt(localStorage.getItem("cardSeleccionada"));
 
 const card = datosGuardados[posicion];
 
