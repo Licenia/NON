@@ -29,13 +29,14 @@ const cambiarEstado = document.getElementById("preview-view");
 const editar = document.getElementById("back-to-edit");
 const noteContainer = document.querySelector(".note-container");
 const guardarNota = document.getElementById("guardar");
+const contenedorBotones = document.querySelector(".container-buttons");
 
 if (mostrarVistaPrevia) {
   mostrarVistaPrevia.addEventListener("click", () => {
     noteContainer.style.display = "none";
     iconoFlecha.style.display = "none";
     noteContent.style.display = "none";
-    mostrarVistaPrevia.style.display = "none";
+    contenedorBotones.style.display = "none";
     cambiarEstado.style.display = "block";
     editar.style.display = "block";
   });
@@ -48,7 +49,7 @@ if (editar) {
     noteContent.style.display = "block";
     editar.style.display = "none";
     cambiarEstado.style.display = "none";
-    mostrarVistaPrevia.style.display = "block";
+    contenedorBotones.style.display = "block";
   });
 }
 
@@ -70,3 +71,4 @@ if (guardarNota) {
 document.getElementById("view-notes").addEventListener("click", () => {
   window.location.href = "notasGuardadas.html";
 });
+
