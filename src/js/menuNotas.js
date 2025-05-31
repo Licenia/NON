@@ -1,17 +1,16 @@
 const menus = document.querySelectorAll(".menu-btn");
 menus.forEach((menu) => {
   menu.addEventListener("click", (e) => {
-     e.stopPropagation();
+    e.stopPropagation();
 
-     document.querySelectorAll(".container-menu").forEach((el) => el.remove());
+    document.querySelectorAll(".container-menu").forEach((el) => el.remove());
 
-    const containerOpciones = document.querySelector(".container-opciones");
     const containerMenu = document.createElement("div");
     containerMenu.classList.add("container-menu");
 
-    
-
-     document.querySelectorAll(".container-menu").forEach((menuExistente) => menuExistente.remove());
+    document
+      .querySelectorAll(".container-menu")
+      .forEach((menuExistente) => menuExistente.remove());
 
     const eliminar = document.createElement("span");
     const editar = document.createElement("span");
@@ -43,9 +42,11 @@ menus.forEach((menu) => {
 
       const input = document.createElement("input");
       input.value = card.titulo;
+      input.classList.add("titulo");
 
       const textArea = document.createElement("textarea");
       textArea.value = card.contenido;
+      textArea.classList.add("contenido");
 
       const guardar = document.createElement("button");
       guardar.classList.add("btn-guardar");
@@ -61,7 +62,7 @@ menus.forEach((menu) => {
 
       containerEdit.appendChild(input);
       containerEdit.appendChild(textArea);
-      containerEdit.appendChild(guardar);
+      document.body.appendChild(guardar);
       document.body.appendChild(containerEdit);
     });
 
@@ -70,6 +71,6 @@ menus.forEach((menu) => {
   });
 });
 
-  document.addEventListener("click", () => {
+document.addEventListener("click", () => {
   document.querySelectorAll(".container-menu").forEach((menu) => menu.remove());
-  })
+});

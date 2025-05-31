@@ -1,3 +1,8 @@
+:root{
+    --color-base: #fef988; 
+    --color-letra: #6f6f69; 
+}
+
 *,
 ::before,
 ::after {
@@ -51,8 +56,6 @@
 
 .container-opciones {
   position: relative;
-  /* display: flex; */
-  /* align-items: center; */
 }
 
 .container-menu {
@@ -75,4 +78,52 @@
 
 .container-menu span:hover {
   background-color: #f0f0f0;
+}
+
+.container-edit{
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  width: 100%;
+  height: 100dvh;
+  align-items: center;
+}
+
+.titulo{
+  width: 100%;
+  font-size: 2rem;
+  padding-bottom: .1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.titulo:focus{
+  outline: none;
+}
+
+.contenido{
+  width: 100%;
+  height: 100%;
+  resize: none;
+}
+
+.contenido:focus{
+outline: none;
+}
+
+.btn-guardar {
+  position: fixed;
+  right: 2rem;
+  background-color: var(--color-base);
+  color:  var(--color-letra);
+  padding: 0.8rem 1.2rem;
+  border-radius: 0.5rem;
+  border: none;
+  box-shadow: 1px 1px 4px 1px rgb(0, 0, 0, 0.4);
+   transition: transform 0.2s ease-out;
+}
+
+.btn-guardar:hover{
+  transform: scale(1.1);
+  cursor: pointer;
 }
