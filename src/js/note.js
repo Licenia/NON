@@ -25,7 +25,7 @@ datosGuardados.forEach((nota, index) => {
   contenido.textContent = nota.contenido;
   
   const menu = document.createElement("img");
-  menu.setAttribute("src", "/public/assets/images/tres-puntos.png");
+  menu.setAttribute("src", "/assets/images/tres-puntos.png");
   menu.classList.add("menu-btn");
   
   cardSection.appendChild(titulo);
