@@ -37,11 +37,19 @@ Desarrollar una aplicacion web utilizando buenas practicas , tambien utilizar un
 ├── /public
 │   └── assets/
 │       └── images/
+|__ vite.config.js
 └── package.json
 
 ```
+## Proyecto publicado en Netlify
 
-## Como ejecutar el proyecto
+Puedes probar la aplicación directamente en el siguiente enlace:
+
+https://notan.netlify.app/
+
+Al hacer clic, accederás a la app web de notas. Es sencilla de utilizar e intuitiva. ¡Explora y prueba todas sus funciones!
+
+## Como ejecutar el proyecto de manera local
 
 ### **Clonar el repositorio**
 
@@ -75,5 +83,5 @@ http://localhost:5173/
 
 ```
 
-## Capturas de Pantallas
+## Captura de Pantalla
 ![](public/assets/images/pagInicio.png)
