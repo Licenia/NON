@@ -55,7 +55,7 @@ Al hacer clic, accederás a la app web de notas. Es sencilla de utilizar e intui
 
 ```bash
 
-git clone https://github.com/tu-usuario/tu-repositorio.git
+git clone https://github.com/Licenia/NON.git
 ```
 
 ### **Instalar dependencias**
