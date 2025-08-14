@@ -1,7 +1,3 @@
-:root {
-  --color-base: #fef988;
-  --color-letra: #6f6f69;
-}
 
 *,
 ::before,
@@ -29,11 +25,6 @@ html {
   align-items: flex-start;
 }
 
-.icono-salir {
-  width: 2rem;
-  transition: transform 0.2s ease;
-}
-
 .note-content {
   width: 100%;
   flex-grow: 1;
@@ -52,28 +43,6 @@ html {
   width: 100%;
 }
 
-.btn-vista-previa,
-.btn-editar,
-.btn-guardar {
-  height: 2.5rem;
-  background-color: var(--color-base);
-  border-radius: 0.7rem;
-  border: 0;
-  color: var(--color-letra);
-  transition: transform 0.2s ease-out;
-  box-shadow: 0 1px 2px 1px rgb(0, 0, 0, 0.2);
-  margin-right: .4rem;
-}
-
-.btn-guardar{
-  width: 5rem;
-}
-
-.btn-guardar:hover{
-  transform: scale(1.1);
-  cursor: pointer;
-}
-
 .btn-vista-previa:hover {
   transform: scale(1.1);
   cursor: pointer;
@@ -82,10 +51,6 @@ html {
 .btn-editar:hover {
   transform: scale(1.1);
   cursor: pointer;
-}
-
-.icono-salir:hover {
-  transform: scale(1.1);
 }
 
 textarea:focus,

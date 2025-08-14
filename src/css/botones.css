@@ -1,0 +1,41 @@
+:root {
+  --color-base: #fef988;
+  --sombra: #d4c752;
+  --color-letra: #7a6f1b;
+  --brillo: #f9f5b2;
+}
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  border: 0;
+}
+
+.btn {
+  height: 2.5rem;
+  background-color: var(--color-base);
+  border-radius: 0.7rem;
+  border: 0;
+  color: var(--color-letra);
+  padding: 1rem;
+  font-weight: bold;
+  transition: transform 0.2s ease-out;
+  box-shadow: 0 5px 0 var(--sombra);
+  margin-right: 0.4rem;
+  transition: transform 0.1s, box-shadow 0.1s;
+}
+
+.btn:hover {
+  background-color: var(--brillo);
+  cursor: pointer;
+}
+
+.btn:active {
+  box-shadow: none;
+  transform: translateY(1px);
+}
+
+.btn-salir {
+  width: 2rem;
+}

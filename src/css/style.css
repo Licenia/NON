@@ -1,66 +1,53 @@
-:root{
-    --color-base: #fef988; 
-    --color-letra: #6f6f69; 
-}
 
 *,
 ::before,
-::after{
-    margin: 0;
-    box-sizing: border-box;
+::after {
+  margin: 0;
+  box-sizing: border-box;
 }
 
-.container{
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  align-items: center;
+  margin: 0;
 }
 
-.logo{
-    position: relative;
-    bottom: 10rem;
-    width: 12rem;
-    margin: 1rem;
+.container {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.non{
-    color: var(--color-letra);
-    text-align: center;
-    position: relative;
-    bottom: 9.9rem;
-    letter-spacing: 1rem;
+.logo {
+  width: 12rem;
+  margin: 1rem;
 }
 
-.button-add-note{
-    position: relative;
-    bottom: 4rem;
-    margin: 1rem;
-    width: 3.5rem;
-    transition: transform 0.2s ease-out;
+.non {
+  color: var(--color-letra);
+  letter-spacing: 1rem;
 }
 
-.button-view-notes{
-    position: relative;
-    bottom: 3rem;
-    width: 10rem;
-    margin: 1rem;
-    padding: .8rem;
-    background-color: var(--color-base);
-    border-radius: .7rem;
-    border: 0;
-    color: var(--color-letra);
-    transition: transform 0.2s ease-out;
-    box-shadow: 1px 1px 4px 1px rgb(0, 0, 0, 0.4);
+.button-add-note {
+  margin: 1rem;
+  width: 3.5rem;
 }
 
-.button-view-notes:hover{
-    transform: scale(1.1);
-    cursor: pointer;
+.button-add-note:hover {
+  cursor: pointer;
 }
 
-.button-add-note:hover{
-cursor: pointer;
-transform: scale(1.1);
+footer {
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 0.9rem;
+}
+
+footer a {
+  color: #807d7d;
+  text-decoration: none;
 }

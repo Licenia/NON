@@ -45,15 +45,6 @@
   cursor: pointer;
 }
 
-.icono-salir {
-  width: 2rem;
-  transition: transform 0.2s ease;
-}
-
-.icono-salir:hover {
-  transform: scale(1.1);
-}
-
 .container-opciones {
   position: relative;
 }
