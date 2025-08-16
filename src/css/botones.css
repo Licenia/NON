@@ -39,3 +39,12 @@
 .btn-salir {
   width: 2rem;
 }
+
+a {
+text-decoration: none;
+}
+
+.position {
+  position: fixed;
+  right: 2rem;
+}

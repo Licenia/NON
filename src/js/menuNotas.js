@@ -49,7 +49,7 @@ menus.forEach((menu) => {
       textArea.classList.add("contenido");
 
       const guardar = document.createElement("button");
-      guardar.classList.add("btn-guardar");
+      guardar.classList.add("btn" , "position");
       guardar.textContent = "Guardar cambios";
 
       guardar.addEventListener("click", () => {
