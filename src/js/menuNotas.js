@@ -49,12 +49,22 @@ menus.forEach((menu) => {
       textArea.classList.add("contenido");
 
       const guardar = document.createElement("button");
-      guardar.classList.add("btn" , "position");
+      guardar.classList.add("btn", "position");
       guardar.textContent = "Guardar cambios";
 
       guardar.addEventListener("click", () => {
-        card.titulo = input.value;
-        card.contenido = textArea.value;
+        const titulo =
+          containerEdit.querySelector(".titulo")?.value.trim() || "";
+        const contenido =
+          containerEdit.querySelector(".contenido")?.value.trim() || "";
+
+        if (!titulo || !contenido) {
+          alert("Titulo y contenido no pueden estar vacios");
+          return;
+        }
+
+        card.titulo = titulo;
+        card.contenido = contenido;
         datosGuardados[index] = card;
         localStorage.setItem("notas", JSON.stringify(datosGuardados));
         location.reload();

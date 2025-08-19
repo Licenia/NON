@@ -55,6 +55,17 @@ if (editar) {
 
 if (guardarNota) {
   guardarNota.addEventListener("click", () => {
+    const inputTitulo = document.getElementById("note-title"); 
+    const inputContenido = document.getElementById("note-textarea"); 
+
+    const titulo = (inputTitulo?.value || "").trim();
+    const contenido = (inputContenido?.value || "").trim();
+
+    if (!titulo || !contenido) {
+      alert("Título y contenido no pueden estar vacíos.");
+      return;
+    }
+
     let notas = JSON.parse(localStorage.getItem("notas")) || [];
     const nuevaNota = {
       titulo: document.querySelector(".titulo").value,
