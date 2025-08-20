@@ -2,7 +2,9 @@
   --color-base: #fef988;
   --sombra: #d4c752;
   --color-letra: #7a6f1b;
-  --brillo: #f9f5b2;
+  --brillo: #fff641;
+  --desabilitar: rgb(230, 215, 215);
+  --texto-desabilitado: #c9c2c2;;
 }
 
 *,
@@ -47,4 +49,18 @@ text-decoration: none;
 .position {
   position: fixed;
   right: 2rem;
+}
+
+.disable {
+  color: var(--texto-desabilitado);
+  background-color: var(--desabilitar);
+  box-shadow: none;
+}
+
+.disable:active {
+  transform: none;
+}
+
+.disable:hover{
+  background-color: var(--desabilitar);
 }

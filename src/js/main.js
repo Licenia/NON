@@ -30,17 +30,9 @@ const editar = document.getElementById("back-to-edit");
 const noteContainer = document.querySelector(".note-container");
 const guardarNota = document.getElementById("guardar");
 const contenedorBotones = document.querySelector(".container-buttons");
+const inputTitulo = document.getElementById("note-title"); 
+const inputContenido = document.getElementById("note-textarea"); 
 
-if (mostrarVistaPrevia) {
-  mostrarVistaPrevia.addEventListener("click", () => {
-    noteContainer.style.display = "none";
-    iconoFlecha.style.display = "none";
-    noteContent.style.display = "none";
-    contenedorBotones.style.display = "none";
-    cambiarEstado.style.display = "block";
-    editar.style.display = "block";
-  });
-}
 
 if (editar) {
   editar.addEventListener("click", () => {
@@ -53,18 +45,34 @@ if (editar) {
   });
 }
 
+function validarCampos(){
+  const titulo = inputTitulo.value.trim() || "",
+  contenido = textMarkdown.value.trim() || "";
+
+  if (!titulo || !contenido) {
+    guardarNota.classList.add("disable");
+    mostrarVistaPrevia.classList.add("disable");
+    guardarNota.disabled = true;
+    mostrarVistaPrevia.disabled = true;
+  } else {
+    guardarNota.classList.remove("disable");
+    mostrarVistaPrevia.classList.remove("disable");
+    guardarNota.disabled = false;
+    mostrarVistaPrevia.disabled = false;
+  }
+}
+
 if (guardarNota) {
   guardarNota.addEventListener("click", () => {
-    const inputTitulo = document.getElementById("note-title"); 
-    const inputContenido = document.getElementById("note-textarea"); 
 
     const titulo = (inputTitulo?.value || "").trim();
     const contenido = (inputContenido?.value || "").trim();
 
     if (!titulo || !contenido) {
-      alert("Título y contenido no pueden estar vacíos.");
+      console.warn("Título y contenido no pueden estar vacíos.");
       return;
     }
+
 
     let notas = JSON.parse(localStorage.getItem("notas")) || [];
     const nuevaNota = {
@@ -76,10 +84,34 @@ if (guardarNota) {
     notas.push(nuevaNota);
 
     localStorage.setItem("notas", JSON.stringify(notas));
+    window.location.href = "notasGuardadas.html";
   });
 }
 
-document.getElementById("view-notes").addEventListener("click", () => {
-  window.location.href = "notasGuardadas.html";
-});
+   if (mostrarVistaPrevia) {
+  mostrarVistaPrevia.addEventListener("click", () => {
+    noteContainer.style.display = "none";
+    iconoFlecha.style.display = "none";
+    noteContent.style.display = "none";
+    contenedorBotones.style.display = "none";
+    cambiarEstado.style.display = "block";
+    editar.style.display = "block";
+  });
+}
 
+const viewNotesBtn = document.getElementById("view-notes");
+if (viewNotesBtn) {
+  viewNotesBtn.addEventListener("click", () => {
+    window.location.href = "notasGuardadas.html";
+  });
+}
+
+if (inputTitulo) {
+  inputTitulo.addEventListener("input", validarCampos);
+}
+
+if (inputContenido) {
+  inputContenido.addEventListener("input", validarCampos);
+}
+
+validarCampos();

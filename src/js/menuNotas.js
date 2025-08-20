@@ -53,13 +53,15 @@ menus.forEach((menu) => {
       guardar.textContent = "Guardar cambios";
 
       guardar.addEventListener("click", () => {
+        const $btnSave = document.getElementById("guardar");
         const titulo =
           containerEdit.querySelector(".titulo")?.value.trim() || "";
         const contenido =
           containerEdit.querySelector(".contenido")?.value.trim() || "";
 
         if (!titulo || !contenido) {
-          alert("Titulo y contenido no pueden estar vacios");
+          console.warn("Titulo y contenido no pueden estar vacios");
+          $btnSave.classList.add("disable");
           return;
         }
 
